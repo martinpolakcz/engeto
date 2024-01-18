@@ -2,89 +2,103 @@
 projekt_1.py: první projekt do Engeto Online Python Akademie
 
 author: Martin Polak
-email: martin.polak@gembedit.cz
+email: martin.polak@embedit.cz
 discord: martin_24338
 """
+import os
 from task_template import TEXTS
 
+if os.name == 'nt': 
+    _ = os.system('cls')
+else:  
+    _ = os.system('clear')
 
 
-hvezda = "*"
-pomlcka= "-"
-
-def kontrola_udaju(jmeno_uzivatele, heslo_uzivatele):
-# implementujte funkci pro kontrolu uživatelských dat
-    uzivatele = {
+uzivatele = {
     "bob": "123",
     "ann": "pass123",
     "mike": "password123",
     "liz": "pass123"
 }
 
-    if jmeno_uzivatele in uzivatele and uzivatele[jmeno_uzivatele] == heslo_uzivatele:
-        return True
-    else:
-        return False
+hvezda = "*"
+pomlcka= "-"
 
-jmeno_uzivatele = input("zedej jmeno: ")
-heslo_uzivatele = input("zadej heslo: ")
+def kontrola_udaju():
+    # implementujte funkci pro kontrolu uživatelských dat
+    while True:
+        jmeno_uzivatele = input("Username: ").lower()
+        heslo_uzivatele = input("Password: ")
 
-while not kontrola_udaju(jmeno_uzivatele, heslo_uzivatele):
-         print("Nespravne jmeno nebo heslo. Zkus to znovu")
-         jmeno_uzivatele = input("zedej jmeno: ")
-         heslo_uzivatele = input("zadej heslo: ")
+        if  uzivatele.get(jmeno_uzivatele) and uzivatele[jmeno_uzivatele] == heslo_uzivatele:
+            return True , jmeno_uzivatele #tuple vraci kontrolu a jmeno uzivate pro osloveni
+        else:
+            print("Your username or password is incorrect, try again")
 
-   
+# Volani funkce pro kontrolu udaju
+result = kontrola_udaju()
+if result[0]:
+    print("Welcome to the app, ",result[1])
+    print(pomlcka*30)
+else:
+    print("Login failed")
 
+def check_amount_of_text():
+    x=0
+    for i in enumerate(TEXTS):
+        if i:
+            x+=1
+    return x
 
-
-print("Prihlaseno!")
-
-
-        
-
-
-
+#Vyber textu       
 print("\n")
-print ("We have 3 text for choose, see below")
+print (f'We have {check_amount_of_text()} text for choose, see below')
 for i,text in enumerate(TEXTS):
     print(f'Text number {i+1}:\n {text}')
     print("\n")
-  
-volba = int(input("Enter a number btw. 1 and 3 to select: "))
+
+while True:
+ choice = int(input('\nChoose the number of the text you want to check: '))
+ if not choice.isdigit() or int(choice) > len(TEXTS) or int(choice) <= 0:
+            print('Wrong number! Try again.\n')
+ else :
+     print("Let's check text")
+     print(pomlcka*30)
+     break
+
+
+        
 print("\n")
-volba = volba -1
-pocet_slov_split = TEXTS[volba].split()
-pocet_slov=len(pocet_slov_split)
+  
+choice = choice -1
+split_text = TEXTS[choice].split()
+pocet_slov=len(split_text)
 
 title_case = 0
 alpha = ([chr(i) for i in range(ord('A'), ord('Z')+1)])
-vyber=TEXTS[volba].split()
-for i in vyber:
+for i in split_text:
    if (i[0] in alpha) and (i[1] not in alpha) :
       
       title_case +=1
 
 uppercase_words = 0
-for x in vyber:
+lowercase_words = 0
+digitcase_words = 0
+digitcase_sum=0
+lengt_longest_word=0
+
+#analyza slov
+for x in split_text:
     if x.isupper():
       uppercase_words+=1
-
-
-lowercase_words = 0
-for x in vyber:
-   if x.islower():
+    if x.islower():
       lowercase_words+=1
-
-   digitcase_words = 0
-for x in vyber:
-   if x.isdigit():
-      digitcase_words+=1
-
-digitcase_sum=0
-for x in vyber:
-   if x.isdigit():
+    if x.isdigit():
+      digitcase_words+=1  
+    if x.isdigit():
       digitcase_sum=digitcase_sum+int(x)
+    if lengt_longest_word <= len(x):
+      lengt_longest_word=len(x)
       
 print('There are',pocet_slov,'words in the selected text.')
 print('There are',title_case,'titlecase words.')
@@ -94,12 +108,12 @@ print('There are',digitcase_words,'numeric strings.')
 print('The sum of all the numbers ',digitcase_sum)
 print(sep="\n")
 
+
 vycistena_slova = []
-for x in vyber:
+for x in split_text:
     ciste_slovo= x.strip(".,:,! ")
     vycistena_slova.append(ciste_slovo.lower())
-
-delka_slov = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0}
+delka_slov = {i: 0 for i in range(lengt_longest_word)}
 vyskyt_slov = {}
 for x in vycistena_slova:
         vyskyt_slov[x] = len(x)
