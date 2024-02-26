@@ -77,7 +77,7 @@ print(pomlcky*20)
 
 #generovani nahodneho cisla
 random_number = generate_random_number()
-print(f'Generated number is: {random_number}')  #--jen pro testovani
+#print(f'Generated number is: {random_number}')  #--jen pro testovani
 
 bulls=0
 attempts =0
