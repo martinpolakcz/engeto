@@ -22,20 +22,11 @@ lenght_pass = 4
 def generate_random_number():
    secret_number=[]
    num_list = [0,1,2,3,4,5,6,7,8,9]
-   num_0 = random.sample(num_list[1:], 1)
-   integer_value = int(str(num_0).strip('[]').replace(',', ''))
-   secret_number.append(integer_value)
-   num_list.remove(integer_value)
+   secret_number = random.sample(list(range(0,10)),5)
+   secret_number = secret_number[:4] if secret_number[0] !=  0 else secret_number[1:5]
+   return "".join(map(str,secret_number))
 
-   num=dict()
-   for i in  range(lenght_pass - 1):
-      num[i] = random.sample(num_list, 1)
-      integer_value = int(str(num[i]).strip('[]').replace(',', ''))
-      secret_number.append(integer_value)
-      num_list.remove(integer_value)
-      
-   secret_number = int(''.join(map(str, secret_number)))
-   return str(secret_number)
+
 
 #kontrola samotne hry
 def check_tip(tip_user,generated_number):
@@ -46,15 +37,13 @@ def check_tip(tip_user,generated_number):
     if tip_user[i] == generated_number[i]:
        # bulls pokud je cislo na stejnem miste a nebo je obsazen v cisle
        bulls += 1
-       
-    if  tip_user[i] in generated_number:
+
+    if  tip_user[i] in generated_number and not tip_user[i] == generated_number[i]:
         # cows pokud je cislo aspon nekde v cisle na nejake pozici
        cows += 1
-    
+       
 
-            
-
-   return bulls  ,cows  
+   return bulls, cows  
 
 #kontrola validace hadaneho cisla
 def validation_number(check_input):
@@ -68,10 +57,15 @@ def validation_number(check_input):
          print('Number start with 0 digits, which is incorrect')
       elif(len(check_input) >4):
          print('Number can not be longer than 4 digits')
+      elif has_duplicates(check_input):
+         print('There are duplicate numbers in your secret')
       else:
          print("Your input is correct, welcome in the game")
          print(pomlcky*20)
          return True
+
+def has_duplicates(numbers):
+    return len(numbers) != len(set(numbers))
 
 #zacatek programu Let's play
 pomlcky = '-'
@@ -83,7 +77,7 @@ print(pomlcky*20)
 
 #generovani nahodneho cisla
 random_number = generate_random_number()
-#print(f'Generated number is: {random_number}')  #--jen pro testovani
+print(f'Generated number is: {random_number}')  #--jen pro testovani
 
 bulls=0
 attempts =0
