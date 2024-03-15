@@ -86,6 +86,7 @@ def write_to_file(url, filename):
       source_name = BeautifulSoup(content_name,'html.parser')
      # print(url_next1)
       
+      #toto vytahne data pro hlavisku v tabulce
       voters_in_the_list_name = source_name.body.find(id='ps311_t1', class_='table').contents[1].contents[3].text
       print(voters_in_the_list_name)
 
@@ -137,7 +138,7 @@ def write_to_file(url, filename):
          for td in source_text_village.find_all('td', class_='cislo', headers=['t2sa2 t2sb3']):
            data_table.append(td.text)
 
-
+        #vlozeni vsech dat do data all pro ulozeni
          data_all=[number.text.strip(),name.text.strip(),voters_in_the_list,letter_covers,valid_vote,data_table]
          data_all[-1] = ','.join(map(str, data_all[-1]))
 
