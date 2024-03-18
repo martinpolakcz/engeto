@@ -28,7 +28,7 @@ def generate_requirements():
     installed_packages = [dist.project_name for dist in pkg_resources.working_set]
     installed_packages_list = [f"{dist}=={pkg_resources.get_distribution(dist).version}" for dist in installed_packages]
     #print("Installed packages: ")
-    f.write("\n")
+    #f.write("\n")
     #print(installed_packages_list)
     #f.write("Installed packages: \n")
     f.write("\n".join(installed_packages_list))
