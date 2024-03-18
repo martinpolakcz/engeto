@@ -39,7 +39,7 @@ Processing: 532690 : Ctiboř
 Processing: 529478 : Čakov
 ```
 **Částečný výstup**
-| dsfsf | sfdsf | sfsdf |   |   |   |   |   |   |   |
+|kód_obce|název_obce|Voličiv seznamu|Vydanéobálky|Platnéhlasy|Občanská demokratická strana|Řád národa - Vlastenecká unie|CESTA ODPOVĚDNÉ SPOLEČNOSTI|Česká str.sociálně demokrat.|Radostné Česko|STAROSTOVÉ A NEZÁVISLÍ|Komunistická str.Čech a Moravy|Strana zelených|ROZUMNÍ-stop migraci|diktát.EU|Strana svobodných občanů|Blok proti islam.-Obran.domova|Občanská demokratická aliance|Česká pirátská strana|Unie H.A.V.E.L.|Referendum o Evropské unii|TOP 09|ANO 2011|Dobrá volba 2016|SPR-Republ.str.Čsl. M.Sládka|Křesť.demokr.unie-Čs.str.lid.|Česká strana národně sociální|REALISTÉ|SPORTOVCI|Dělnic.str.sociální spravedl.|Svob.a př.dem.-T.Okamura (SPD)|Strana Práv Občanů|
 |-------|-------|-------|---|---|---|---|---|---|---|
 | 6     | 7     | 8     |   |   |   |   |   |   |   |
 |       |       |       |   |   |   |   |   |   |   |
