@@ -41,15 +41,8 @@ Processing: 529478 : Čakov
 **Částečný výstup**
 | kód_obce | název_obce | Voličiv seznamu | Vydanéobálky | Platnéhlasy |Občanská demokratická strana |Řád národa - Vlastenecká unie | CESTA ODPOVĚDNÉ SPOLEČNOSTI |
 |-------|-------|-------|---|---|---|---|---|
-| 6     | 7     | 8     |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |
+|29303|Benešov|13104|8485|8437|1052|10|2|
+|532568|Bernartice|191|148|148|4|0|0|
 
 
 
