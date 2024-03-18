@@ -1,4 +1,4 @@
-Třetí projekt na Pzthon Akademii od Engeta
+Třetí projekt na Python Akademii od Engeta
 
 ## Popis projektu
 Tento projekt slouží k extrahování výsledků z parlamentních voleb v roce 2017. Odkaz k prohlednutí [zde](https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=2&xnumnuts=2101)
@@ -6,8 +6,8 @@ Tento projekt slouží k extrahování výsledků z parlamentních voleb v roce 
 ### Instalace knihoven
 Knihovny, které jsou použitý v kódu jsou uložené v souboru requirements.txt. Pro instalaci doporučuju použit nové virtuální prostředí a s nainstalovaným manažerem spustit následovně:
 ```
-$ pip --version      #overim verzi manazeru
-$ pip install -r requirements.txt #nainstaluje knihovny
+$ pip --version                       #overim verzi manazeru
+$ pip install -r requirements.txt     #nainstaluje knihovny
 ```
 ### Spuštění projektu
 Spuštění souboru main.py v rámci přikazového řádku požaduje dva povinné argumenty.
