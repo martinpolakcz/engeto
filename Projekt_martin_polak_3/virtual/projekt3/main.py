@@ -22,7 +22,7 @@ else:
 
 #generovani pozadavku do souboru
 def generate_requirements():
-  with open ("requirement01.txt","w") as f:
+  with open ("requirements.txt","w") as f:
 
 #vytahne seznam  z PyPi a ulozi ho do txt
     installed_packages = [dist.project_name for dist in pkg_resources.working_set]
@@ -30,9 +30,9 @@ def generate_requirements():
     print("Installed packages: ")
     f.write("\n")
     print(installed_packages_list)
-    f.write("Installed packages: \n")
+    #f.write("Installed packages: \n")
     f.write("\n".join(installed_packages_list))
-    f.write("\n")
+    #f.write("\n")
     f.close()
     
 
@@ -75,12 +75,8 @@ def write_to_file(url, filename):
       name_v = source_text.find_all('td',attrs={"class": "overflow_name"})
 
       data = {}
-      header = ['code','location','registered','envelopes','valid']
       data_all = []
-      data_all_mame = []
-      
       data_table_strany = []
-      data_village = {}
       url_next1 = f"https://volby.cz/pls/ps2017nss/ps311?xjazyk=CZ&xkraj=2&xobec={number_v[0].text.strip()}"
       content_name = requests.get(url_next1).text
       source_name = BeautifulSoup(content_name,'html.parser')
@@ -88,19 +84,19 @@ def write_to_file(url, filename):
       
       #toto vytahne data pro hlavisku v tabulce
       voters_in_the_list_name = source_name.body.find(id='ps311_t1', class_='table').contents[1].contents[3].text
-      print(voters_in_the_list_name)
+      #print(voters_in_the_list_name)
 
       letter_covers_name = source_name.body.find(id='ps311_t1', class_='table').contents[1].contents[5].text
-      print(letter_covers_name)
+      #print(letter_covers_name)
 
       valid_vote_name = source_name.body.find(id='ps311_t1', class_='table').contents[1].contents[11].text
-      print(valid_vote_name)
+      #print(valid_vote_name)
 
       for td in source_name.find_all('td', class_='overflow_name', headers=['t1sa1 t1sb2']):
         data_table_strany.append(td.text)
       for td in source_name.find_all('td', class_='overflow_name', headers=['t2sa1 t2sb2']):
         data_table_strany.append(td.text)
-      print(data_table_strany)
+      #print(data_table_strany)
 
       data_all_name=['kód_obce','název_obce',voters_in_the_list_name,letter_covers_name,valid_vote_name,data_table_strany]
       data_all_name[-1] = ','.join(map(str, data_all_name[-1]))
