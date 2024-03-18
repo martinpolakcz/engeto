@@ -39,17 +39,17 @@ Processing: 532690 : Ctiboř
 Processing: 529478 : Čakov
 ```
 **Částečný výstup**
-|kód_obce|název_obce|Voličiv seznamu|Vydanéobálky|Platnéhlasy|Občanská demokratická strana|Řád národa - Vlastenecká unie|CESTA ODPOVĚDNÉ SPOLEČNOSTI|
-|-------|-------|-------|---|---|---|---|---|---|---|
-| 6     | 7     | 8     |   |   |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |   |   |
-|       |       |       |   |   |   |   |   |   |   |
+| kód_obce | název_obce | Voličiv seznamu | Vydanéobálky | Platnéhlasy |Občanská demokratická strana |Řád národa - Vlastenecká unie | CESTA ODPOVĚDNÉ SPOLEČNOSTI |
+|-------|-------|-------|---|---|---|---|---|
+| 6     | 7     | 8     |   |   |   |   |   |
+|       |       |       |   |   |   |   |   |
+|       |       |       |   |   |   |   |   |
+|       |       |       |   |   |   |   |   |
+|       |       |       |   |   |   |   |   |
+|       |       |       |   |   |   |   |   |
+|       |       |       |   |   |   |   |   |
+|       |       |       |   |   |   |   |   |
+|       |       |       |   |   |   |   |   |
 
 
 
