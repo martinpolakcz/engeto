@@ -1,5 +1,10 @@
-#pip install setuptools
-#pip install requests
+"""
+main.py: třetí projekt do Engeto Online Python Akademie
+
+author: Martin Polak
+email: martin.polak@embedit.cz
+discord: martin_24338
+"""
 
 import pip
 import os
@@ -60,16 +65,12 @@ print("Program vypíše nainstalované balíčky a ukládá je do souboru.")
 
 
 
-
-
 def write_to_file(url, filename):
    content = requests.get(url).text
    source_text = BeautifulSoup(content,'html.parser')
    with open(filename, 'w') as f:
-      #f.write(content) 
 
 
-#new
  
       number_v = source_text.find_all('td',attrs={"class": "cislo"})
       name_v = source_text.find_all('td',attrs={"class": "overflow_name"})
